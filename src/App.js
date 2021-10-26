@@ -20,6 +20,17 @@ function App(props) {
     setUnit(data);
   };
 
+  const createUnit = async (unit) => {
+    await fetch(URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "Application/json",
+      },
+      body: JSON.stringify(unit),
+    });
+    getUnit();
+  }
+
   useEffect(() => getUnit(), []);
 
   return (
@@ -28,7 +39,7 @@ function App(props) {
       <BrowserRouter>
         <Switch>
           <Route exact path="/">
-            <Home unit={unit} />
+            <Home unit={unit} createUnit={createUnit} />
           </Route>
           <Route
             path="/roster/:house"

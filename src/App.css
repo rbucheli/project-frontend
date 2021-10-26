@@ -1,17 +1,29 @@
 .App {
   text-align: center;
+}
+
+.bg-image {
   background-image: url("./feh3.png");
 }
 
 /* Header */
 .nav {
   padding-left: 20px;
+  padding-right: 10px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 20px;
+  border-radius: 0 0 18px 18px;
+  box-shadow: 1px 1px 20px 1px #000;
 }
 /*  */
 
 /* Root Route */
 h2 {
-  padding-bottom: 5px;
+  padding-bottom: 7px;
+  padding-top: 13px;
 }
 
 .unitImg {
@@ -19,7 +31,6 @@ h2 {
   border-radius: 100%;
   border: 8px solid #e5d393;
   object-fit: cover;
-  width: 250px;
   height: 250px;
   background-color: white;
 }
@@ -33,5 +44,6 @@ border-style: groove;
 border-width: 3px;
 border-radius: 50px;
 border-color: black;
-padding: 10px 10px 10px 10px
+padding: 20px 0px;
+background: rgb(110 110 110 / 65%);
 }
