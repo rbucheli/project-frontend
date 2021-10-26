@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 // Import Components
 import Header from "./components/Header";
@@ -16,25 +17,25 @@ function App(props) {
   const getUnit = async () => {
     const response = await fetch(URL);
     const data = await response.json();
-    setUnit(data)
-    // line 18 does what, exactly?
+    setUnit(data);
   };
-  
+
   useEffect(() => getUnit(), []);
 
   return (
     <div className="App">
       <Header />
       <BrowserRouter>
-      <Switch>
-        <Route exact path="/">
-          <Home unit={unit} />
-        </Route>
-        <Route path="/roster">
-          <Roster />
-        </Route>
+        <Switch>
+          <Route exact path="/">
+            <Home unit={unit} />
+          </Route>
+          <Route
+            path="/roster/:house"
+            render={(routerProps) => <Roster unit={unit} {...routerProps} />}
+          />
         </Switch>
-        </BrowserRouter>
+      </BrowserRouter>
     </div>
   );
 }

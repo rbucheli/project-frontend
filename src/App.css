@@ -2,6 +2,23 @@
   text-align: center;
 }
 
+.nav {
+  padding-left: 20px;
+}
+
 .unitImg {
   width: 200px;
+}
+
+.container {
+  max-width: 1320px;
+}
+
+.row {
+border-style: groove;
+border-width: thin;
+border-radius: 50px;
+border-color: black;
+padding: 10px 10px 10px 10px
+/* background-color: blue; */
 }

@@ -1,18 +1,56 @@
-import { Link, BrowserRouter } from "react-router-dom"
+import { Link, BrowserRouter } from "react-router-dom";
+
+function characterComponent(unit) {
+  return (
+    <div className="col-md-2">
+      <img src={unit.image} className="unitImg" />
+      <div>{unit.name}</div>
+    </div>
+  );
+}
 
 function Home(props) {
-
   // loaded function
   const loaded = () => {
-    return props.unit.map((unit) => (
-      <div class='row'>
-        {/* if (startingHouse === "Black Eagles") {
+    return (
+      <div className="container">
+    
+        <h2>Black Eagles</h2>
         
-        } */}
-        <h1>{unit.name}</h1>
-        <img src={unit.image} className="unitImg" />
+
+        <Link to={`/roster/be`}>
+          <div className="row">  
+            {props.unit.map((unit) => (
+                unit.startingHouse === "Black Eagles"
+                  ? characterComponent(unit)
+                  : null
+            ))}
+          </div>
+          </Link>
+
+        <Link to={`/roster/bl`} >
+        <h2>Blue Lions</h2>
+        <div className="row">
+          {props.unit.map((unit) => (
+              unit.startingHouse === "Blue Lions"
+                ? characterComponent(unit)
+                : null
+          ))}
+          </div>
+          </Link>
+
+        <Link to={`/roster/gd`} >
+          <h2>Golden Deer</h2>
+          <div className="row">
+          {props.unit.map((unit) => (
+              unit.startingHouse === "Golden Deer"
+                ? characterComponent(unit)
+                : null
+          ))}
+        </div>
+        </Link>
       </div>
-    ));
+    );
   };
 
   const loading = () => {
