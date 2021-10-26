@@ -1,72 +1,78 @@
 import React, { useState, useEffect } from "react";
 function Roster(props) {
   let house;
-  
   let userRoster;
-
   let userRecruitable;
-
-  const [rosterChars, setRoster] = useState([]);
-
-  const [recruitChars, setRecruitable] = useState([]);
 
   function initialRoster(characters) {
     userRoster = characters.filter(char => char.startingHouse == house);
-    // setRoster(userRoster);
   }
 
   function initialRecruitable(characters) {
     userRecruitable = characters.filter(char => char.startingHouse !== house && char.recruitable);
-    // setRecruitable(userRecruitable);
   }
-  function recruitCharacter(id) {
-    // const charIndex = userRecruitable.findIndex(char => char._id == id);
-    // userRoster.push(...userRecruitable.splice(charIndex, 1));
-    // console.log(userRoster);
+
+  function recruitCharacter(clickedChar) {
+    setRecruitable( prevRecruitable => prevRecruitable.filter( character => character._id !== clickedChar._id));
+    setRoster( prevRoster => [...prevRoster, clickedChar]);
   }
-  
-  function removeCharacter(id) {
-    // const charIndex = userRoster.findIndex(char => char._id == id);
-    // userRecruitable.push(...userRoster.splice(charIndex, 1));
-    // console.log(userRecruitable);
+
+  function removeCharacter(clickedChar) {
+    if (clickedChar.startingHouse === house) {
+      return
+    }
+    setRoster( prevRoster => prevRoster.filter( character => character._id !== clickedChar._id));
+    setRecruitable( prevRecruitable => [...prevRecruitable, clickedChar]);
   }
-  
+
   function setHouse(houseName) {
     switch (houseName) {
       case 'be':
-      return  house = "Black Eagles"
+        return house = "Black Eagles"
       case 'bl':
-      return  house = "Blue Lions"
+        return house = "Blue Lions"
       case 'gd':
-      return  house = "Golden Deer"
+        return house = "Golden Deer"
       default:
-      return house = "Black Eagles"
+        return house = "Black Eagles"
     }
   }
-  function characterComponent(unit) {
+
+  function characterComponent(unit, recruit) {
     return (
-      <div className="col-md-2">
+      <div className="col-md-2"
+        onClick={(e) => recruit ? recruitCharacter(unit, e) : removeCharacter(unit, e)}>
         <img src={unit.image} className="unitImg" />
         <div>{unit.name}</div>
       </div>
     );
   }
+
   setHouse(props.match.params.house);
+
   initialRoster(props.unit);
+
   initialRecruitable(props.unit);
+
+  const [rosterChars, setRoster] = useState(userRoster);
+
+  const [recruitChars, setRecruitable] = useState(userRecruitable);
+
   return (
     <div className="container">
+
       <h1>Roster</h1>
-      {/* {console.log(userRoster)} */}
       <div className="row">
-        {rosterChars.map((unit) => 
+        {rosterChars.map((unit) =>
           characterComponent(unit, false))}
       </div>
+
       <h2>Recruitable</h2>
       <div className="row">
-      {recruitChars.map((unit) => 
+        {recruitChars.map((unit) =>
           characterComponent(unit, true))}
       </div>
+
     </div>
 
   )

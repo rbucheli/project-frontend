@@ -1,13 +1,27 @@
 .App {
   text-align: center;
+  background-image: url("./feh3.png");
 }
 
+/* Header */
 .nav {
   padding-left: 20px;
+}
+/*  */
+
+/* Root Route */
+h2 {
+  padding-bottom: 5px;
 }
 
 .unitImg {
   width: 200px;
+  border-radius: 100%;
+  border: 8px solid #e5d393;
+  object-fit: cover;
+  width: 250px;
+  height: 250px;
+  background-color: white;
 }
 
 .container {
@@ -16,9 +30,8 @@
 
 .row {
 border-style: groove;
-border-width: thin;
+border-width: 3px;
 border-radius: 50px;
 border-color: black;
 padding: 10px 10px 10px 10px
-/* background-color: blue; */
 }
