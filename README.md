@@ -26,6 +26,6 @@ Heroku Deployment Pending
 
 Future Enhancements
 ===============
-- Implement basic authorization
+- Implement basic authentication
 - Include buttons
 - Display unit details on recruit page
