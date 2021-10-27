@@ -17,6 +17,7 @@ Screenshots
 ===============
 ![Alt text](fe3hrosterbuilder.png)
 ![Alt text](fe3hrosterbuilder2.png)
+![Alt text](wireframe2.png)
 
 Getting Started
 ===============
