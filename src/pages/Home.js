@@ -15,7 +15,7 @@ function Home(props) {
   const loaded = () => {
     return (
       <div className="container">
-        <Link to={`/roster/be`} style={{ textDecoration: 'none', color: 'white', fontSize: "22px" }}>
+        <Link to={`/roster/be`} style={{ textDecoration: 'none', color: 'white', fontSize: "30px" }}>
         <h2>Black Eagles</h2>
           <div className="row">
             {props.unit.map((unit) =>
