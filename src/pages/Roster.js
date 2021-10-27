@@ -40,7 +40,7 @@ function Roster(props) {
 
   function characterComponent(unit, recruit) {
     return (
-      <div className="col-md-2"
+      <div className="col-md-2" style={{ textDecoration: 'none', color: 'white', fontSize: "22px" }}
         onClick={(e) => recruit ? recruitCharacter(unit, e) : removeCharacter(unit, e)}>
         <img src={unit.image} className="unitImg" />
         <div>{unit.name}</div>
@@ -59,7 +59,7 @@ function Roster(props) {
   const [recruitChars, setRecruitable] = useState(userRecruitable);
 
   return (
-    <div className="container">
+    <div className="container" style={{ textDecoration: 'none', color: 'white', fontSize: "22px" }}>
 
       <h1>Roster</h1>
       <div className="row">

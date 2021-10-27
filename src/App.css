@@ -1,9 +1,15 @@
 .App {
   text-align: center;
+  background-image: url("./FEH3.jpeg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  font-family: gabriola;
 }
 
-.bg-image {
-  background-image: url("./feh3.png");
+@font-face {
+  font-family: 'gabriola';
+  src: url("./gabriola.ttf") format("truetype");
 }
 
 /* Header */
@@ -14,9 +20,15 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 20px;
   border-radius: 0 0 18px 18px;
   box-shadow: 1px 1px 20px 1px #000;
+  background-color: rgb(25, 11, 58);
+  
+}
+
+.title-nav {
+  color: white;
+  font-size: 50px;
 }
 /*  */
 
@@ -24,12 +36,13 @@
 h2 {
   padding-bottom: 7px;
   padding-top: 13px;
+  text-decoration: none;
 }
 
 .unitImg {
   width: 200px;
   border-radius: 100%;
-  border: 8px solid #e5d393;
+  border: 8px solid #131312;
   object-fit: cover;
   height: 250px;
   background-color: white;
@@ -46,4 +59,9 @@ border-radius: 50px;
 border-color: black;
 padding: 20px 0px;
 background: rgb(110 110 110 / 65%);
+}
+
+/* Roster */
+.h1 {
+  padding-top: 12px;
 }

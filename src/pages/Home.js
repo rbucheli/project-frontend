@@ -15,9 +15,8 @@ function Home(props) {
   const loaded = () => {
     return (
       <div className="container">
+        <Link to={`/roster/be`} style={{ textDecoration: 'none', color: 'white', fontSize: "22px" }}>
         <h2>Black Eagles</h2>
-
-        <Link to={`/roster/be`}>
           <div className="row">
             {props.unit.map((unit) =>
               unit.startingHouse === "Black Eagles"
@@ -27,7 +26,7 @@ function Home(props) {
           </div>
         </Link>
 
-        <Link to={`/roster/bl`}>
+        <Link to={`/roster/bl`}style={{ textDecoration: 'none', color: 'white', fontSize: "22px" }}>
           <h2>Blue Lions</h2>
           <div className="row">
             {props.unit.map((unit) =>
@@ -38,7 +37,7 @@ function Home(props) {
           </div>
         </Link>
 
-        <Link to={`/roster/gd`}>
+        <Link to={`/roster/gd`}style={{ textDecoration: 'none', color: 'white', fontSize: "22px" }}>
           <h2>Golden Deer</h2>
           <div className="row">
             {props.unit.map((unit) =>
@@ -49,7 +48,7 @@ function Home(props) {
           </div>
         </Link>
 
-        <Link to={`/roster/cs`}>
+        {/* <Link to={`/roster/cs`}>
           <h2>Church of Seiros</h2>
           <div className="row">
             {props.unit.map((unit) =>
@@ -58,7 +57,7 @@ function Home(props) {
                 : null
               )}
             </div>
-          </Link>
+          </Link> */}
       </div>
     );
   };
