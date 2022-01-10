@@ -1,7 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+// import './index.css'; Issues arise when this is uncommented
 // IMPORT ROUTER
 import { BrowserRouter as Router } from "react-router-dom";
 import App from './App';

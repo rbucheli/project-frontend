@@ -62,86 +62,11 @@ function Home(props) {
     );
   };
 
-  const [newForm, setNewForm] = useState({
-    name: "",
-    image: "",
-    personal: "",
-    crest: "",
-    buddingTalent: "",
-    startingHouse: "",
-  });
-
-  const handleChange = (event) => {
-    setNewForm({ ...newForm, [event.target.name]: event.target.value });
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    props.createUnit(newForm);
-    setNewForm({
-      name: "",
-      image: "",
-      personal: "",
-      crest: "",
-      buddingTalent: "",
-      startingHouse: "",
-    });
-  };
-
   const loading = () => {
     return <h1>Loading...</h1>;
   };
 
-  return (
-    <section>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          value={newForm.name}
-          name="name"
-          placeholder="name"
-          onChange={handleChange}
-        />
-        <input
-          type="text"
-          value={newForm.image}
-          name="image"
-          placeholder="image URL"
-          onChange={handleChange}
-        />
-        <input
-          type="text"
-          value={newForm.personal}
-          name="personal"
-          placeholder="personal"
-          onChange={handleChange}
-        />
-        <input
-          type="text"
-          value={newForm.crest}
-          name="crest"
-          placeholder="crest"
-          onChange={handleChange}
-        />
-        <input
-          type="text"
-          value={newForm.buddingTalent}
-          name="buddingTalent"
-          placeholder="buddingTalent"
-          onChange={handleChange}
-        />
-        <input
-          type="text"
-          value={newForm.startingHouse}
-          name="startingHouse"
-          placeholder="startingHouse"
-          onChange={handleChange}
-        />
-        <input type="submit" value="Create Unit" />
-      </form>
-      {props.unit ? loaded() : loading()}
-    </section>
-  );
+  return props.unit ? loaded() : loading();
 }
 
 export default Home;
