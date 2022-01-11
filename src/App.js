@@ -11,7 +11,7 @@ import Roster from "./pages/Roster";
 function App(props) {
   const [unit, setUnit] = useState(null);
 
-  const URL = "http://fe3h-backend.herokuapp.com/";
+  const URL = "https://fe3h-backend.herokuapp.com/";
 
   // API call function for units
   const getUnit = async () => {
@@ -29,7 +29,7 @@ function App(props) {
       body: JSON.stringify(unit),
     });
     getUnit();
-  }
+  };
 
   useEffect(() => getUnit(), []);
 
